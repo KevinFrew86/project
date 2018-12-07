@@ -10,7 +10,7 @@ class Animal
     @admission_date = options['admission_date']
     @trained = options['trained']
     @health = options['health']
-    @adoptability = options['adoptability']
+    @adoptability = is_adoptable()
   end
 
 
