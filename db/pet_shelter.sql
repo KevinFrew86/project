@@ -1,5 +1,5 @@
-DROP TABLE animals;
 DROP TABLE owners;
+DROP TABLE animals;
 
 CREATE TABLE animals
 (
@@ -7,7 +7,7 @@ CREATE TABLE animals
   name VARCHAR(255),
   type VARCHAR (255),
   breed VARCHAR(255),
-  admission_date INT,
+  admission_date VARCHAR(255),
   trained BOOLEAN,
   health BOOLEAN,
   adoptability BOOLEAN
