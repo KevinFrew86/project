@@ -53,7 +53,7 @@ class Animal
     WHERE id = $1"
     values = [id]
     results = SqlRunner.run( sql, values )
-    return Victim.new( results.first )
+    return Owner.new( results.first )
 
   end
 
@@ -63,6 +63,14 @@ class Animal
     sql = "DELETE FROM animals"
     SqlRunner.run( sql )
 
+  end
+
+  def is_adoptable()
+    if @trained && @health == true
+      return true
+    else
+      return false
+    end
   end
 
 end

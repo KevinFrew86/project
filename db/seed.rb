@@ -3,7 +3,7 @@ require_relative( "../models/owner.rb" )
 require("pry-byebug")
 
 Animal.delete_all()
-# Owner.delete_all()
+Owner.delete_all()
 
 animal1 = Animal.new({
   "name" => "Chonky",
@@ -11,22 +11,22 @@ animal1 = Animal.new({
   "breed" => "Mastiff",
   "admission_date" => "0218",
   "trained" => "true",
-  "health" => "f"
+  "health" => "false"
 })
 
 animal1.save()
 
 
 animal2 = Animal.new({
-  "name" => "Billy",
+  "name" => "Shaz!!!",
   "type" => "Cat",
   "breed" => "British shorthair",
   "admission_date" => "0618",
-  "trained" => "f",
-  "health" => "f"
+  "trained" => "false",
+  "health" => "false"
 })
 
-# animal2.save()
+animal2.save()
 
 
 animal3 = Animal.new({
@@ -34,11 +34,11 @@ animal3 = Animal.new({
   "type" => "Dog",
   "breed" => "Shnoodle",
   "admission_date" => "1018",
-  "trained" => "t",
-  "health" => "t"
+  "trained" => true,
+  "health" => true
 })
 
-# animal3.save()
+animal3.save()
 
 
 animal4 = Animal.new({
@@ -46,11 +46,11 @@ animal4 = Animal.new({
   "type" => "Cat",
   "breed" => "Murmese",
   "admission_date" => "1218",
-  "trained" => "t",
-  "health" => "t"
+  "trained" => true,
+  "health" => true
 })
 
-# animal4.save()
+animal4.save()
 
 
 animal5 = Animal.new({
@@ -58,11 +58,11 @@ animal5 = Animal.new({
   "type" => "Dog",
   "breed" => "Whippet",
   "admission_date" => "0417",
-  "trained" => "t",
-  "health" => "f"
+  "trained" => true,
+  "health" => false
 })
 
-#animal5.save()
+animal5.save()
 
 
 animal6 = Animal.new({
@@ -70,11 +70,11 @@ animal6 = Animal.new({
   "type" => "Cat",
   "breed" => "Tonkinese",
   "admission_date" => "0218",
-  "trained" => "f",
-  "health" => "t"
+  "trained" => false,
+  "health" => true
 })
 
-#animal6.save()
+animal6.save()
 
 
 owner1 = Owner.new({
@@ -82,7 +82,7 @@ owner1 = Owner.new({
   "pets" => []
 })
 
-#owner1.save()
+# owner1.save()
 
 
 owner2 = Owner.new({
@@ -90,7 +90,7 @@ owner2 = Owner.new({
   "pets" => []
 })
 
-#owner2.save()
+# owner2.save()
 
 
 owner3 = Owner.new({
@@ -98,7 +98,7 @@ owner3 = Owner.new({
   "pets" => []
 })
 
-#owner3.save()
+# owner3.save()
 
 
 binding.pry
