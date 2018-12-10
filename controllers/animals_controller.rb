@@ -36,9 +36,6 @@ get '/animals/:id' do
   erb( :pet )
 end
 
-get '/owners' do
-  erb( :owners )
-end
 
 
 
