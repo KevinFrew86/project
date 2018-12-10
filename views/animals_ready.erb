@@ -1,1 +1,7 @@
-<h1>Animals ready to adopt</h1>
+<h1>Animals ready to be adopted</h1>
+
+<% for animal in @adoptable_animals %>
+  <p>Name: <%= animal.name() %></p>
+  <p><a href="/animals/<%= animal.id %>">Show Pet</a></p>
+
+<% end %>

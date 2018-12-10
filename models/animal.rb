@@ -75,12 +75,25 @@ class Animal
     end
   end
 
+  def self.animal_adoptable()
+    animals = Animal.all()
+    result = []
+
+    for animal in animals
+      if animal.is_adoptable() == true
+        result << animal
+      end
+    end
+
+    return result
+
+  end
+
   def self.animal_in_training()
     animals = Animal.all()
     result = []
 
     for animal in animals
-    # for Animals.all
       if animal.trained == "f"
         result << animal
       end
@@ -94,7 +107,6 @@ class Animal
     result = []
 
     for animal in animals
-    # for Animals.all
       if animal.health == "f"
         result << animal
       end

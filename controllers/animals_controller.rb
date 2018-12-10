@@ -13,7 +13,8 @@ get '/animals' do
 end
 
 get '/animals/ready' do
-  erb( :animals_ready)
+  @adoptable_animals = Animal.animal_adoptable()
+  erb( :animals_ready )
 end
 
 
