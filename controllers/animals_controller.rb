@@ -12,9 +12,9 @@ get '/animals' do
   erb( :animals )
 end
 
-# get '/animals/ready' do
-#
-# end
+get '/animals/ready' do
+  erb( :animals_ready)
+end
 
 
 get '/animals/in_training' do
