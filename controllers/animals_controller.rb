@@ -17,7 +17,7 @@ end
 
 get '/animals/:id' do
   @animals = Animal.find(params[:id].to_i())
-  erb(:show)
+  erb(:pet)
 end
 
 # get '/animals/in_care' do
