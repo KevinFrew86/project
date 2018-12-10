@@ -2,6 +2,8 @@ require_relative( '../db/sql_runner' )
 
 class Animal
 
+  attr_reader :name, :type, :breed, :admission_date, :trained, :health, :adoptability
+
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
@@ -42,9 +44,16 @@ class Animal
 
     sql = "SELECT * FROM animals"
     results = SqlRunner.run( sql )
-    return results.map { |animal| Animal.new( animal ) }
+    return results.map { |animal_hash| Animal.new( animal_hash ) }
 
   end
+
+  # def self.all()
+  #     sql = "SELECT * FROM pizza_orders"
+  #     pizzas = SqlRunner.run( sql )
+  #     result = pizzas.map { |pizza| PizzaOrder.new( pizza ) }
+  #     return result
+  #   end
 
 
   def self.find( id )

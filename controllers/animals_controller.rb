@@ -11,8 +11,13 @@ also_reload( '../models/*' )
 # end
 
 get '/animals' do
-
+  @animals = Animal.all()
   erb( :animals )
+end
+
+get '/animals/:id' do
+  @animals = Animal.find(params[:id].to_i())
+  erb(:show)
 end
 
 # get '/animals/in_care' do
