@@ -1,1 +1,7 @@
 <h1>Owners</h1>
+
+<% for owner in @owners %>
+  <p>Name: <%= owner.name() %></p>
+  <p><a href="/owners/<%= owner.id %>">Show Pets</a></p>
+
+<% end %>

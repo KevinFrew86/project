@@ -8,6 +8,6 @@ also_reload( '../models/*' )
 #read
 
 get '/owners' do
-  # @owners = Owner.all()
+  @owners = Owner.all()
   erb( :owners )
 end

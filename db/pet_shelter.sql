@@ -1,5 +1,11 @@
-DROP TABLE owners;
 DROP TABLE animals;
+DROP TABLE owners;
+
+CREATE TABLE owners
+(
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255)
+);
 
 CREATE TABLE animals
 (
@@ -10,12 +16,6 @@ CREATE TABLE animals
   admission_date VARCHAR(255),
   trained BOOLEAN,
   health BOOLEAN,
-  adoptability BOOLEAN
-);
-
-CREATE TABLE owners
-(
-  id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255),
-  pets INT REFERENCES animals(id)
+  adoptability BOOLEAN,
+  owner INT REFERENCES owners(id)
 );
