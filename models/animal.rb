@@ -75,4 +75,32 @@ class Animal
     end
   end
 
+  def self.animal_in_training()
+    animals = Animal.all()
+    result = []
+
+    for animal in animals
+    # for Animals.all
+      if animal.trained == "f"
+        result << animal
+      end
+    end
+
+    return result
+  end
+
+  def self.animal_in_care()
+    animals = Animal.all()
+    result = []
+
+    for animal in animals
+    # for Animals.all
+      if animal.health == "f"
+        result << animal
+      end
+    end
+
+    return result
+  end
+
 end

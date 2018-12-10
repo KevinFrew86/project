@@ -12,8 +12,21 @@ get '/animals' do
   erb( :animals )
 end
 
+# get '/animals/ready' do
+#
+# end
+
+
+get '/animals/in_training' do
+  @in_training_animals = Animal.animal_in_training()
+  erb( :animals_in_training )
+end
+
+
 get '/animals/in_care' do
-  # @animal = Animal.find(params[:health])
+  # get all the animals
+  # loop through the animals and create an array of in care animals
+  @in_care_animals = Animal.animal_in_care()
   erb( :animals_in_care )
 end
 
@@ -23,15 +36,6 @@ get '/animals/:id' do
 end
 
 
-
-
-# get '/animals/in_training' do
-#
-# end
-
-# get '/animals/ready' do
-#
-# end
 
 #create
 
