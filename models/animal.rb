@@ -5,7 +5,7 @@ class Animal
   attr_reader :name, :type, :breed, :admission_date, :trained, :health, :adoptability, :id
 
   def initialize(options)
-    @id = options['id'].to_i # if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
     @type = options['type']
     @breed = options['breed']

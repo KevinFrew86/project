@@ -16,19 +16,19 @@ get '/animals' do
 end
 
 get '/animals/:id' do
-  @animals = Animal.find(params[:id].to_i())
-  erb(:pet)
+  @animal = Animal.find(params[:id].to_i())
+  erb( :pet )
 end
 
 # get '/animals/in_care' do
 #
 # end
-#
-#
+
+
 # get '/animals/in_training' do
 #
 # end
-#
+
 # get '/animals/ready' do
 #
 # end
