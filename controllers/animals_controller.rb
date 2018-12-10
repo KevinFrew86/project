@@ -1,6 +1,8 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
+require_relative( '../models/animal.rb' )
+also_reload( '../models/*' )
 
 
 # get '/animals' do
@@ -9,6 +11,7 @@ require('pry-byebug')
 # end
 
 get '/animals' do
+
   erb( :animals )
 end
 
