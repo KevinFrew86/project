@@ -5,14 +5,16 @@ require_relative( '../models/animal.rb' )
 also_reload( '../models/*' )
 
 
-# get '/animals' do
-#   # @pets = Animal.all()
-#   erb( :animals)
-# end
+#read
 
 get '/animals' do
   @animals = Animal.all()
   erb( :animals )
+end
+
+get '/animals/in_care' do
+  # @animal = Animal.find(params[:health])
+  erb( :animals_in_care )
 end
 
 get '/animals/:id' do
@@ -20,9 +22,7 @@ get '/animals/:id' do
   erb( :pet )
 end
 
-# get '/animals/in_care' do
-#
-# end
+
 
 
 # get '/animals/in_training' do
@@ -32,3 +32,15 @@ end
 # get '/animals/ready' do
 #
 # end
+
+#create
+
+
+#delete
+
+
+#edit
+
+
+
+#update
