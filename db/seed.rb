@@ -3,22 +3,22 @@ require_relative( "../models/owner.rb" )
 require("pry-byebug")
 
 Animal.delete_all()
-Owner.delete_all()
+# Owner.delete_all()
 
 animal1 = Animal.new({
   "name" => "Chonky",
   "type" => "Dog",
   "breed" => "Mastiff",
   "admission_date" => "0218",
-  "trained" => "true",
-  "health" => "false"
+  "trained" => "t",
+  "health" => "f"
 })
 
 animal1.save()
 
 
 animal2 = Animal.new({
-  "name" => "Shaz!!!",
+  "name" => "Shaz",
   "type" => "Cat",
   "breed" => "British shorthair",
   "admission_date" => "0618",

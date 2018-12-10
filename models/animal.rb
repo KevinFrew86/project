@@ -66,7 +66,7 @@ class Animal
   end
 
   def is_adoptable()
-    if @trained && @health == true
+    if @trained && @health == "t"
       return true
     else
       return false
