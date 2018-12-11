@@ -1,3 +1,4 @@
+DROP TABLE adoptions;
 DROP TABLE animals;
 DROP TABLE owners;
 
@@ -17,5 +18,11 @@ CREATE TABLE animals
   trained BOOLEAN,
   health BOOLEAN,
   adoptability BOOLEAN,
-  owner_id INT REFERENCES owners(id)
+);
+
+CREATE TABLE adoptions
+(
+  id SERIAL8 PRIMARY KEY,
+  owner_id INT REFERENCES,
+  animal_id INT REFERENCES
 );

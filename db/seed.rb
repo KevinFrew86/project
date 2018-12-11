@@ -36,7 +36,6 @@ animal1 = Animal.new({
   "admission_date" => "0218",
   "trained" => "t",
   "health" => "f",
-  "owner_id" => owner2.id
 })
 
 animal1.save()
@@ -49,7 +48,6 @@ animal2 = Animal.new({
   "admission_date" => "0618",
   "trained" => "false",
   "health" => "false",
-  "owner_id" => owner1.id
 })
 
 animal2.save()
@@ -62,7 +60,6 @@ animal3 = Animal.new({
   "admission_date" => "1018",
   "trained" => true,
   "health" => true,
-  "owner_id" => owner2.id
 })
 
 animal3.save()
@@ -75,7 +72,6 @@ animal4 = Animal.new({
   "admission_date" => "1218",
   "trained" => true,
   "health" => true,
-  "owner_id" => owner3.id
 })
 
 animal4.save()
@@ -88,7 +84,6 @@ animal5 = Animal.new({
   "admission_date" => "0417",
   "trained" => true,
   "health" => false,
-  "owner_id" => nil
 })
 
 animal5.save()
@@ -101,7 +96,6 @@ animal6 = Animal.new({
   "admission_date" => "0218",
   "trained" => false,
   "health" => true,
-  "owner_id" => nil
 })
 
 animal6.save()
