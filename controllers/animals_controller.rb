@@ -40,10 +40,11 @@ end
 
 #create
 
-get '/animals/new' do
+post '/animals' do
+  @animal = Animal.new(params)
+  @animal.save()
   erb(:new_animal)
 end
-
 #delete
 
 
