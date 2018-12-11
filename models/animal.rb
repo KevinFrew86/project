@@ -67,81 +67,83 @@ class Animal
       admission_date,
       trained,
       health
-    ) =
-    (
-      $1, $2, $3, $4, $5, $6
-    )
-    WHERE id = $7"
-    values = [@name, @type, @breed, @admission_date, @trained, @health, @id]
-    SqlRunner.run( sql, values )
-  end
-
-  def self.find( id )
-
-    sql = "SELECT * FROM animals
-    WHERE id = $1"
-    values = [id]
-    results = SqlRunner.run( sql, values )
-    return Animal.new( results.first )
-
-  end
-
-
-  def self.delete_all
-
-    sql = "DELETE FROM animals"
-    SqlRunner.run( sql )
-
-  end
-
-  def is_adoptable()
-    if @trained && @health == "true"
-      return true
-    else
-      return false
+      ) =
+      (
+        $1, $2, $3, $4, $5, $6
+      )
+      WHERE id = $7"
+      values = [@name, @type, @breed, @admission_date, @trained, @health, @id]
+      SqlRunner.run( sql, values )
     end
-  end
 
-  def self.animal_adoptable()
-    animals = Animal.all()
-    result = []
+    def self.find( id )
+      sql = "SELECT * FROM animals
+      WHERE id = $1"
+      values = [id]
+      results = SqlRunner.run( sql, values )
+      return Animal.new( results.first )
+    end
 
-    for animal in animals
-      if animal.is_adoptable() == "true"
-        result << animal
+
+    def self.delete_all
+      sql = "DELETE FROM animals"
+      SqlRunner.run( sql )
+    end
+
+
+    def delete()
+      sql = "DELETE FROM animals
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+    end
+
+
+    def is_adoptable()
+      if @trained && @health == "true"
+        return true
+      else
+        return false
       end
     end
 
-    return result
+    def self.animal_adoptable()
+      animals = Animal.all()
+      result = []
 
-  end
-
-  def self.animal_in_training()
-    animals = Animal.all()
-    result = []
-
-    for animal in animals
-      if animal.trained == "false"
-        result << animal
+      for animal in animals
+        if animal.is_adoptable() == "true"
+          result << animal
+        end
       end
+
+      return result
     end
 
-    return result
-  end
+    def self.animal_in_training()
+      animals = Animal.all()
+      result = []
 
-  def self.animal_in_care()
-    animals = Animal.all()
-    result = []
-
-    for animal in animals
-      if animal.health == "false"
-        result << animal
+      for animal in animals
+        if animal.trained == "false"
+          result << animal
+        end
       end
+
+      return result
     end
 
-    return result
+    def self.animal_in_care()
+      animals = Animal.all()
+      result = []
+
+      for animal in animals
+        if animal.health == "false"
+          result << animal
+        end
+      end
+
+      return result
+    end
+
   end
-
-
-
-end

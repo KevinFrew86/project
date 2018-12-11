@@ -54,9 +54,8 @@ end
 #delete
 
 post '/animals/:id/delete' do
-  animal = Animal.find(params[:id].to_i())
-  animal.delete()
-  # erb(:show)
+  @animal = Animal.find(params[:id].to_i())
+  @animal.delete()
   redirect('/animals')
 end
 
