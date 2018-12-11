@@ -1,11 +1,9 @@
 <h1>Pets</h1>
 
 
-<% for adoption in @adoptions %>
-<% if owner_id = adoption.owner.id %>
-<p>Name: <%= adoption.animal.name() %></p>
-<p>Type: <%= adoption.animal.type() %></p>
-<p>Breed: <%= adoption.animal.breed %></p>
+<% for animal in @animals %>
+<p>Name: <%= animal.name() %></p>
+<p>Type: <%= animal.type() %></p>
+<p>Breed: <%= animal.breed %></p>
 
-<% end %>
 <% end %>

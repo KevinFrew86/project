@@ -39,6 +39,14 @@ class Animal
 
   end
 
+  def owners()
+
+    sql = "SELECT o.* FROM owners o INNER JOIN adoptions a ON adoptions.owner_id = o.id WHERE a.animal_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |owner| Owner.new(owner) }
+
+  end
 
   def self.all()
 
@@ -85,7 +93,7 @@ class Animal
       end
     end
 
-    retun result
+    return result
 
   end
 

@@ -15,8 +15,10 @@ get '/owners' do
 end
 
 get '/owners/owners_pets/:id' do
-  @adoptions = Adoption.all()
-  @owners = Owner.all()
-  @animals = Animal.all
+  # find the owner
+  @owner = Owner.find(params[:id])
+  # find the animals of the owner using an owner method
+  @animals = @owner.animals()
+  # populate the erb with the owners animals
   erb( :owners_pets)
 end
