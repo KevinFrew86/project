@@ -18,6 +18,10 @@ get '/animals/ready' do
   erb( :animals_ready )
 end
 
+get '/animals/new_animal' do
+  erb( :new_animal )
+end
+
 
 get '/animals/in_training' do
   @in_training_animals = Animal.animal_in_training()
@@ -43,9 +47,18 @@ end
 post '/animals' do
   @animal = Animal.new(params)
   @animal.save()
-  erb(:new_animal)
+  redirect('/animals')
 end
+
+
 #delete
+
+post '/animals/:id/delete' do
+  animal = Animal.find(params[:id].to_i())
+  animal.delete()
+  # erb(:show)
+  redirect('/animals')
+end
 
 
 #edit
@@ -56,6 +69,7 @@ get '/animals/:id/edit' do
   @health = ["true", "false"]
   erb(:edit_animal)
 end
+
 
 #update
 
