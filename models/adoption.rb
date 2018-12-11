@@ -74,19 +74,19 @@ class Adoption
   end
 
   #for all animals, if animals.ownner_id == owner.id then push results to array
-
-  def self.owners_pets()
-    adoptions = Adoption.all()
-    result = []
-
-    for adoption in adoptions
-      if adoptions.owner_id == @owner.id
-        result << @animal
-      end
-    end
-
-    return result
-  end
+  # 
+  # def self.owners_pets()
+  #   adoptions = Adoption.all()
+  #   result = []
+  #
+  #   for adoption in adoptions
+  #     if adoptions.owner_id == @owner.id
+  #       result << @adoption
+  #     end
+  #   end
+  #
+  #   return result
+  # end
 
 
 
