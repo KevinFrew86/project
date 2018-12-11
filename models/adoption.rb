@@ -19,10 +19,10 @@ class Adoption
     )
     VALUES
     (
-      $1
+      $1, $2
     )
     RETURNING id"
-    values = [@name]
+    values = [@animal_id, @owner_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
 

@@ -3,10 +3,9 @@ require_relative( "../models/owner.rb" )
 require_relative( "../models/adoption.rb" )
 require("pry-byebug")
 
+Adoption.delete_all()
 Animal.delete_all()
 Owner.delete_all()
-# Adoption.delete_all()
-
 
 owner1 = Owner.new({
   "name" => "John"
@@ -103,28 +102,28 @@ animal6.save()
 
 adoption1 = Adoption.new({
   "owner_id" => owner1.id,
-  "animal_id" => animal2.id
+  "animal_id" => animal2.id,
 })
 
 adoption1.save()
 
 adoption2 = Adoption.new({
   "owner_id" => owner2.id,
-  "animal_id" => animal1.id
+  "animal_id" => animal1.id,
 })
 
 adoption2.save()
 
 adoption3 = Adoption.new({
   "owner_id" => owner2.id,
-  "animal_id" => animal3.id
+  "animal_id" => animal3.id,
 })
 
 adoption3.save()
 
 adoption4 = Adoption.new({
   "owner_id" => owner3.id,
-  "animal_id" => owner6.id
+  "animal_id" => animal6.id,
 })
 
 adoption4.save()
