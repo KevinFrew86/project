@@ -2,9 +2,9 @@
 
 <p>Name: <%= @animal.name() %></p>
 <p>Type: <%= @animal.type() %></p>
-<p>Breed: <%= @animal.breed %></p>
-<p>Admitted: <%= @animal.admission_date%></p>
-<p>Trained: <%= @animal.trained%></p>
-<p>Healthy: <%= @animal.health%></p>
+<p>Breed: <%= @animal.breed() %></p>
+<p>Admitted: <%= @animal.admission_date()%></p>
+<p>Trained: <%= @animal.trained()%></p>
+<p>Healthy: <%= @animal.health()%></p>
 
 <p><a href="/animals/<%= @animal.id %>/edit">Edit pet</a></p>

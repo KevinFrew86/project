@@ -1,0 +1,35 @@
+<form action="/animals/<%= @animal.id %>" method="post">
+
+  <label for="name">First Name:</label>
+  <input type="text" name="name" value="<%= @animal.name %>">
+
+  <label for="type">Type:</label>
+  <input type="text" name="type" value="<%=@animal.type %>">
+
+  <label for="breed">Breed:</label>
+  <input type="text" name=breed value="<%= @animal.breed %>">
+
+  <label for="trained">Trained?:</label>
+  <select name="trained">
+      <% for trained in @trained %>
+        <% if trained == @animal.trained %>
+          <option selected value="<%= trained %>"><%= trained %></option>
+        <% else %>
+          <option value="<%= trained %>"><%= trained %></option>
+        <%end %>
+      <%end %>
+    </select>
+
+    <label for="health">Healthy?:</label>
+    <select name="health">
+        <% for health in @health %>
+          <% if health == @animal.trained %>
+            <option selected value="<%= health %>"><%= health %></option>
+          <% else %>
+            <option value="<%= health %>"><%= health %></option>
+          <%end %>
+        <%end %>
+      </select>
+
+  <input type="submit" value="Add pet">
+</form>

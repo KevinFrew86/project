@@ -38,16 +38,28 @@ get '/animals/:id' do
 end
 
 
-
-
 #create
 
+get '/animals/new' do
+  erb(:new_animal)
+end
 
 #delete
 
 
 #edit
 
-
+get '/animals/:id/edit' do
+  @animal = Animal.find(params[:id].to_i())
+  @trained = ["True", "False"]
+  @health = ["True", "False"]
+  erb(:edit_animal)
+end
 
 #update
+
+post '/animals/:id' do
+  @animal = Animal.new(params)
+  @animal.update()
+  redirect('/animals')
+end

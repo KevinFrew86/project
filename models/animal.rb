@@ -57,6 +57,25 @@ class Animal
   end
 
 
+  def update()
+    sql = "UPDATE animals
+    SET
+    (
+      name,
+      type,
+      breed,
+      admission_date,
+      trained,
+      health
+    ) =
+    (
+      $1, $2, $3, $4, $5, $6
+    )
+    WHERE id = $5"
+    values = [@name, @type, @breed, @admission_date, @health]
+    SqlRunner.run( sql, values )
+  end
+
   def self.find( id )
 
     sql = "SELECT * FROM animals
@@ -123,15 +142,6 @@ class Animal
     return result
   end
 
-  # def self.owners_pet()
-  #   animals = Animals.all()
-  #   result = []
-  #
-  #   for animal in animals
-  #     if animal.owner_id == @owner.id
-  #       result << animal
-  #     end
-  #   end
-  # end
+
 
 end
