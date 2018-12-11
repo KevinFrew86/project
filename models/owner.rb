@@ -55,4 +55,10 @@ class Owner
   end
 
 
+  #for all animals, if animals.ownner_id == owner.id then push results to array
+  def owners_pet()
+
+  end
+
+
 end

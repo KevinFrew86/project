@@ -13,7 +13,7 @@ class Animal
     @trained = options['trained']
     @health = options['health']
     @adoptability = is_adoptable()
-    @owner = options['owner']
+    @owner_id = options['owner_id']
   end
 
 
@@ -28,14 +28,14 @@ class Animal
       trained,
       health,
       adoptability,
-      owner
+      owner_id
     )
     VALUES
     (
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     RETURNING id"
-    values = [@name, @type, @breed, @admission_date, @trained, @health, @adoptability, @owner]
+    values = [@name, @type, @breed, @admission_date, @trained, @health, @adoptability, @owner_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
 
@@ -87,7 +87,7 @@ class Animal
       end
     end
 
-    return result
+    retun result
 
   end
 
@@ -115,6 +115,17 @@ class Animal
     end
 
     return result
+  end
+
+  def self.owners_pet()
+    animals = Animals.all()
+    result = []
+
+    for animal in animals
+      if animal.owner_id == @owner.id
+        result << animal
+      end
+    end
   end
 
 end

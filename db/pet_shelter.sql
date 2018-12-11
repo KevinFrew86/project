@@ -17,5 +17,5 @@ CREATE TABLE animals
   trained BOOLEAN,
   health BOOLEAN,
   adoptability BOOLEAN,
-  owner INT REFERENCES owners(id)
+  owner_id INT REFERENCES owners(id)
 );

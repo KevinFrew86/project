@@ -1,9 +1,11 @@
 require_relative( "../models/animal.rb" )
 require_relative( "../models/owner.rb" )
+require_relative( "../models/adoption.rb" )
 require("pry-byebug")
 
 Animal.delete_all()
 Owner.delete_all()
+# Adoption.delete_all()
 
 
 owner1 = Owner.new({
@@ -34,7 +36,7 @@ animal1 = Animal.new({
   "admission_date" => "0218",
   "trained" => "t",
   "health" => "f",
-  "owner" => owner2.id
+  "owner_id" => owner2.id
 })
 
 animal1.save()
@@ -47,7 +49,7 @@ animal2 = Animal.new({
   "admission_date" => "0618",
   "trained" => "false",
   "health" => "false",
-  "owner" => owner1.id
+  "owner_id" => owner1.id
 })
 
 animal2.save()
@@ -60,7 +62,7 @@ animal3 = Animal.new({
   "admission_date" => "1018",
   "trained" => true,
   "health" => true,
-  "owner" => owner2.id
+  "owner_id" => owner2.id
 })
 
 animal3.save()
@@ -73,7 +75,7 @@ animal4 = Animal.new({
   "admission_date" => "1218",
   "trained" => true,
   "health" => true,
-  "owner" => owner3.id
+  "owner_id" => owner3.id
 })
 
 animal4.save()
@@ -86,7 +88,7 @@ animal5 = Animal.new({
   "admission_date" => "0417",
   "trained" => true,
   "health" => false,
-  "owner" => nil
+  "owner_id" => nil
 })
 
 animal5.save()
@@ -99,7 +101,7 @@ animal6 = Animal.new({
   "admission_date" => "0218",
   "trained" => false,
   "health" => true,
-  "owner" => nil
+  "owner_id" => nil
 })
 
 animal6.save()
