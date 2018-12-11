@@ -23,6 +23,6 @@ CREATE TABLE animals
 CREATE TABLE adoptions
 (
   id SERIAL8 PRIMARY KEY,
-  owner_id INT REFERENCES,
-  animal_id INT REFERENCES
+  owner_id INT REFERENCES owners(id),
+  animal_id INT REFERENCES animals(id)
 );

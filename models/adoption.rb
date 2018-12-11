@@ -2,9 +2,10 @@ require_relative( '../db/sql_runner' )
 
 class Adoption
 
-  attr_reader :animal_id, :owner_id
+  attr_reader :animal_id, :owner_id, :id
 
   def initialize(options)
+    @id = options['id'].to_i if options['id']
     @animal_id = options['animal_id']
     @owner_id = options['owner_id']
   end
