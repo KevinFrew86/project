@@ -49,12 +49,46 @@ class Adoption
   end
 
 
+  def animal()
+    sql = "SELECT * FROM animals
+    WHERE id = $1"
+    values = [@animal_id]
+    results = SqlRunner.run( sql, values )
+    return Animal.new( results.first )
+  end
+
+  def owner()
+    sql = "SELECT * FROM owners
+    WHERE id = $1"
+    values = [@owner_id]
+    results = SqlRunner.run( sql, values )
+    return Owner.new( results.first )
+  end
+
+
   def self.delete_all
 
     sql = "DELETE FROM adoptions"
     SqlRunner.run( sql )
 
   end
+
+  #for all animals, if animals.ownner_id == owner.id then push results to array
+
+  def self.owners_pets()
+    adoptions = Adoption.all()
+    result = []
+
+    for adoption in adoptions
+      if adoptions.owner_id == @owner.id
+        result << @animal
+      end
+    end
+
+    return result
+  end
+
+
 
 
 end

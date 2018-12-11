@@ -1,7 +1,8 @@
 <h1>Pets</h1>
 
-<% for adoption in @adoptions %>
-  <p>Name: <%= animal.name() %></p>
-
+<% for animal in @animals %>
+<p>Name: <%= @animal.name() %></p>
+<p>Type: <%= @animal.type() %></p>
+<p>Breed: <%= @animal.breed %></p>
 
 <% end %>

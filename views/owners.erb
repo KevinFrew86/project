@@ -2,6 +2,6 @@
 
 <% for owner in @owners %>
   <p>Name: <%= owner.name() %></p>
-  <p><a href="/owners/owners_pets<%= owner.id %>">Show Pets</a></p>
+  <p><a href="/owners/owners_pets/<%= owner.id %>">Show Pets</a></p>
 
 <% end %>

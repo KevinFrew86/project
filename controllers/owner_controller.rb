@@ -14,7 +14,11 @@ get '/owners' do
   erb( :owners )
 end
 
-get '/owners/owners_adopted_pets' do
-  @pets_by_owner = Animal.owners_pet()
+get '/owners/owners_pets/:id' do
+  @animal = Animals.owners_pets()
   erb( :owners_pets)
 end
+#
+# get '/owners/owners_pets/:id'
+#
+# end

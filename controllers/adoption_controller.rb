@@ -7,6 +7,7 @@ require_relative( '../models/adoption.rb' )
 also_reload( '../models/*' )
 
 get '/adoptions' do
-  # @adoptions = Adoption.all()
+  @adoptions = Adoption.all()
+  @animals = Animal.all()
   erb( :adoptions )
 end
