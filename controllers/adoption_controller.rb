@@ -5,16 +5,3 @@ require_relative( '../models/owner.rb' )
 require_relative( '../models/animal.rb' )
 require_relative( '../models/adoption.rb' )
 also_reload( '../models/*' )
-
-
-#read
-
-get '/owners' do
-  @owners = Owner.all()
-  erb( :owners )
-end
-
-get '/owners/owners_adopted_pets' do
-  @pets_by_owner = Animal.owners_pet()
-  erb( :owners_pets)
-end
