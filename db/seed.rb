@@ -101,6 +101,34 @@ animal6 = Animal.new({
 animal6.save()
 
 
+adoption1 = Adoption.new({
+  "owner_id" => "4",
+  "animal_id" => "8"
+})
+
+adoption1.save()
+
+adoption2 = Adoption.new({
+  "owner_id" => "5",
+  "animal_id" => "7"
+})
+
+adoption2.save()
+
+adoption3 = Adoption.new({
+  "owner_id" => "5",
+  "animal_id" => "9"
+})
+
+adoption3.save()
+
+adoption4 = Adoption.new({
+  "owner_id" => "6",
+  "animal_id" => "12"
+})
+
+adoption4.save()
+
 
 binding.pry
 nil
