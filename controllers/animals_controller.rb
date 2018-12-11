@@ -51,8 +51,8 @@ end
 
 get '/animals/:id/edit' do
   @animal = Animal.find(params[:id].to_i())
-  @trained = ["True", "False"]
-  @health = ["True", "False"]
+  @trained = ["true", "false"]
+  @health = ["true", "false"]
   erb(:edit_animal)
 end
 

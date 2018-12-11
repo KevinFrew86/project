@@ -33,8 +33,8 @@ animal1 = Animal.new({
   "type" => "Dog",
   "breed" => "Mastiff",
   "admission_date" => "0218",
-  "trained" => "t",
-  "health" => "f",
+  "trained" => "true",
+  "health" => "false",
 })
 
 animal1.save()
@@ -57,8 +57,8 @@ animal3 = Animal.new({
   "type" => "Dog",
   "breed" => "Shnoodle",
   "admission_date" => "1018",
-  "trained" => true,
-  "health" => true,
+  "trained" => "true",
+  "health" => "true",
 })
 
 animal3.save()
@@ -69,8 +69,8 @@ animal4 = Animal.new({
   "type" => "Cat",
   "breed" => "Murmese",
   "admission_date" => "1218",
-  "trained" => true,
-  "health" => true,
+  "trained" => "true",
+  "health" => "true",
 })
 
 animal4.save()
@@ -81,8 +81,8 @@ animal5 = Animal.new({
   "type" => "Dog",
   "breed" => "Whippet",
   "admission_date" => "0417",
-  "trained" => true,
-  "health" => false,
+  "trained" => "true",
+  "health" => "false",
 })
 
 animal5.save()
@@ -93,8 +93,8 @@ animal6 = Animal.new({
   "type" => "Cat",
   "breed" => "Tonkinese",
   "admission_date" => "0218",
-  "trained" => false,
-  "health" => true,
+  "trained" => "false",
+  "health" => "true",
 })
 
 animal6.save()

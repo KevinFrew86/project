@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Animal
 
-  attr_reader :name, :type, :breed, :admission_date, :trained, :health, :adoptability, :id
+  attr_accessor :name, :type, :breed, :admission_date, :trained, :health, :adoptability, :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -71,8 +71,8 @@ class Animal
     (
       $1, $2, $3, $4, $5, $6
     )
-    WHERE id = $5"
-    values = [@name, @type, @breed, @admission_date, @health]
+    WHERE id = $7"
+    values = [@name, @type, @breed, @admission_date, @trained, @health, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -95,7 +95,7 @@ class Animal
   end
 
   def is_adoptable()
-    if @trained && @health == "t"
+    if @trained && @health == "true"
       return true
     else
       return false
@@ -107,7 +107,7 @@ class Animal
     result = []
 
     for animal in animals
-      if animal.is_adoptable() == true
+      if animal.is_adoptable() == "true"
         result << animal
       end
     end
@@ -121,7 +121,7 @@ class Animal
     result = []
 
     for animal in animals
-      if animal.trained == "f"
+      if animal.trained == "false"
         result << animal
       end
     end
@@ -134,7 +134,7 @@ class Animal
     result = []
 
     for animal in animals
-      if animal.health == "f"
+      if animal.health == "false"
         result << animal
       end
     end

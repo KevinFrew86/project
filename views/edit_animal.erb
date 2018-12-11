@@ -1,4 +1,6 @@
 <form action="/animals/<%= @animal.id %>" method="post">
+  <input type="hidden" name="id" value= <%= @animal.id %>>
+  <input type="hidden" name="admission_date" value= <%= @animal.admission_date %>>
 
   <label for="name">First Name:</label>
   <input type="text" name="name" value="<%= @animal.name %>">
@@ -11,24 +13,15 @@
 
   <label for="trained">Trained?:</label>
   <select name="trained">
-      <% for trained in @trained %>
-        <% if trained == @animal.trained %>
-          <option selected value="<%= trained %>"><%= trained %></option>
-        <% else %>
-          <option value="<%= trained %>"><%= trained %></option>
-        <%end %>
-      <%end %>
+      <option value="true">true</option>
+      <option value="false">false</option>
     </select>
 
     <label for="health">Healthy?:</label>
     <select name="health">
-        <% for health in @health %>
-          <% if health == @animal.trained %>
-            <option selected value="<%= health %>"><%= health %></option>
-          <% else %>
-            <option value="<%= health %>"><%= health %></option>
-          <%end %>
-        <%end %>
+      <option value="true">true</option>
+      <option value="false">false</option>
+
       </select>
 
   <input type="submit" value="Add pet">
