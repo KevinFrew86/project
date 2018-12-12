@@ -1,0 +1,33 @@
+body {
+ height: 100%;
+ margin: 0;
+ text-align: center;
+ width: 100%;
+ background-color: dimgrey;
+}
+
+h1 {
+	font-size: 60px;
+  font-family: monospace;
+  color: White;
+  background-size: cover;
+  background-position: center;
+  height: 60px;
+
+}
+
+h2{
+	font-size: 32px;
+  font-family: monospace;
+  color: White;
+  width: 100%;
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+  color: White;
+  font-family: monospace;
+  text-align: center;
+  width: 100%;
+}
