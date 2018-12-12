@@ -80,6 +80,13 @@ class Adoption
     return Owner.new( results.first )
   end
 
+  def delete()
+    sql = "DELETE FROM adoptions
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values )
+  end
+
 
   def self.delete_all
 
@@ -87,23 +94,6 @@ class Adoption
     SqlRunner.run( sql )
 
   end
-
-  #for all animals, if animals.ownner_id == owner.id then push results to array
-  #
-  # def self.owners_pets()
-  #   adoptions = Adoption.all()
-  #   result = []
-  #
-  #   for adoption in adoptions
-  #     if adoptions.owner_id == @owner.id
-  #       result << @adoption
-  #     end
-  #   end
-  #
-  #   return result
-  # end
-
-
 
 
 end

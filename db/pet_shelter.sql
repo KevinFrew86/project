@@ -17,12 +17,12 @@ CREATE TABLE animals
   admission_date VARCHAR(255),
   trained BOOLEAN,
   health BOOLEAN,
-  adoptability BOOLEAN,
+  adoptability BOOLEAN
 );
 
 CREATE TABLE adoptions
 (
   id SERIAL8 PRIMARY KEY,
   owner_id INT REFERENCES owners(id),
-  animal_id INT REFERENCES animals(id),
+  animal_id INT REFERENCES animals(id)
 );

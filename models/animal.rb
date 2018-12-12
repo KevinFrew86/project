@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Animal
 
-  attr_accessor :name, :type, :breed, :admission_date, :trained, :health, :adoptability, :id
+  attr_accessor :name, :type, :breed, :admission_date, :trained, :health, :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -100,10 +100,10 @@ class Animal
 
 
     def is_adoptable()
-      if @trained && @health == "true"
-        return true
+      if @trained == "t" && @health == "t"
+        return "true"
       else
-        return false
+        return "false"
       end
     end
 
@@ -112,6 +112,8 @@ class Animal
       result = []
 
       for animal in animals
+        # binding.pry
+
         if animal.is_adoptable() == "true"
           result << animal
         end
@@ -125,7 +127,7 @@ class Animal
       result = []
 
       for animal in animals
-        if animal.trained == "false"
+        if animal.trained == "f"
           result << animal
         end
       end
@@ -138,7 +140,7 @@ class Animal
       result = []
 
       for animal in animals
-        if animal.health == "false"
+        if animal.health == "f"
           result << animal
         end
       end
