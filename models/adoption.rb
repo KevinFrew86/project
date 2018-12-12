@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Adoption
 
-  attr_reader :animal_id, :owner_id, :id
+  attr_accessor :animal_id, :owner_id, :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -35,6 +35,21 @@ class Adoption
     results = SqlRunner.run( sql )
     return results.map { |adoption_hash| Adoption.new( adoption_hash ) }
 
+  end
+
+  def update()
+    sql = "UPDATE adoptions
+    SET
+    (
+      animal_id,
+      owner_id
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@animal_id, @owner_id ,@id]
+    SqlRunner.run( sql, values )
   end
 
 
@@ -74,7 +89,7 @@ class Adoption
   end
 
   #for all animals, if animals.ownner_id == owner.id then push results to array
-  # 
+  #
   # def self.owners_pets()
   #   adoptions = Adoption.all()
   #   result = []
