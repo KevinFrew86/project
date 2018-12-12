@@ -1,9 +1,13 @@
+
+
 <form action="/adoptions" method="post">
 
   <label for="animal_id">Animal:</label>
   <select name="animal_id">
     <% for animal in @animals %>
+    <% if animal.is_adoptable() == "true" %>
       <option value="<%= animal.id %>"><%= animal.name %></option>
+      <% end %>
     <% end %>
 
   </select>

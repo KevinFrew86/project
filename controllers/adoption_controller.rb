@@ -29,3 +29,8 @@ post '/adoptions' do
   @adoption.save()
   redirect('/adoptions')
 end
+
+post '/adoptions/:id/delete' do
+  Adoption.destroy(params[:id])
+  redirect to("/adoptions")
+end
