@@ -1,33 +1,108 @@
-body {
- height: 100%;
- margin: 0;
- text-align: center;
- width: 100%;
- background-color: dimgrey;
+header {
+  display: block;
+  font-family: helvetica;
+  color: Ivory;
+  background-color: forestgreen;
+  height: 100%;
+  text-align: left;
+  margin-top: 0;
+  opacity: 0.8;
 }
 
 h1 {
-	font-size: 60px;
-  font-family: monospace;
-  color: White;
-  background-size: cover;
-  background-position: right;
-  height: 60px;
-
+  color: ivory;
 }
 
-h2{
-	font-size: 32px;
-  font-family: monospace;
-  color: White;
-  width: 100%;
+h1 a {
+    display: block;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+h1 a:hover {
+  background-color: ivory;
+  color: forestgreen;
+}
+
+h2 {
+  color: ivory;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: forestgreen;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: ivory;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: ivory;
+  color: forestgreen;
+}
+
+body{
+
+  font-family: helvetica;
+  background-image: url("/images/dog.jpg");
+  background-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 100px;
+
 }
 
 p {
-  font-size: 18px;
-  color: White;
-  font-family: monospace;
+  font-family: helvetica;
+  color: ivory;
+  line-height: 10px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+p a {
+  color: ivory;
+}
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
   text-align: center;
-  width: 100%;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: ivory;
+}
+
+div {
+  margin-right: 30px;
+  align: left;
 }

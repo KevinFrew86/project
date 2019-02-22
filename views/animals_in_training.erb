@@ -1,7 +1,11 @@
-<h2>Animals in training</h2>
+<div>
+
+<h1>Animals in training</h1>
 
 <% for animal in @in_training_animals %>
   <p>Name: <%= animal.name %></p>
   <p><a href="/animals/<%= animal.id %>">Show Pet</a></p>
 
 <% end %>
+
+</div>

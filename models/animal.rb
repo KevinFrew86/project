@@ -112,8 +112,6 @@ class Animal
       result = []
 
       for animal in animals
-        # binding.pry
-
         if animal.is_adoptable() == "true"
           result << animal
         end

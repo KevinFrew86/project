@@ -1,7 +1,11 @@
-<h2>>Animals in care</h2>
+<div>
+
+<h1>Animals in care</h1>
 
 <% for animal in @in_care_animals %>
   <p>Name: <%= animal.name() %></p>
   <p><a href="/animals/<%= animal.id %>">Show Pet</a></p>
 
 <% end %>
+
+</div>

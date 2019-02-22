@@ -1,4 +1,6 @@
-<h2>Adoptions</h2>
+<h1>Adoptions</h1>
+
+<div class="">
 
 <% for adoption in @adoptions %>
 <p>Pet Name: <%= adoption.animal.name() %></p>
@@ -10,3 +12,5 @@
 <% end %>
 
 <p><a href="/adoptions/new_adoption">Create Adoption</a></p>
+
+</div>

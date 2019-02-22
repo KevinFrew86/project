@@ -1,3 +1,5 @@
+<div>
+
 <p>Name: <%= @animal.name() %></p>
 <p>Type: <%= @animal.type() %></p>
 <p>Breed: <%= @animal.breed() %></p>
@@ -10,3 +12,5 @@
 <form method="post" action="/animals/<%= @animal.id%>/delete">
   <input class="submit" type="submit" value="Delete"/>
 </form>
+
+</div>

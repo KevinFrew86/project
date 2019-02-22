@@ -1,4 +1,6 @@
-<h2>Add pet</h2>
+<h1>Add pet</h1>
+
+<div>
 
 <form action="/adoptions" method="post">
 
@@ -17,6 +19,8 @@
     <% for owner in @owners %>
       <option value="<%= owner.id %>"><%= owner.name %></option>
     <% end %>
+
+</div>
 
 
   </select>
